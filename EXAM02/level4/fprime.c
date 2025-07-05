@@ -13,34 +13,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	main(int ac, char **av)
+int     main(int ac, char **av)
 {
-	int	n;
-	int	i;
+        int     i = 2;
+        int     num;
 
-	i = 2;
-	if (ac == 2)
-	{
-		n = atoi(av[1]);
-
-		if (n == 1)
-		{
-			printf("1\n");
-			return (0);
-		}
-		while (i <= n)
-		{
-			if (n % i == 0)
-			{
-				printf("%d", i);
-				n = n / i;
-				if (n > 1)
-					printf("*");
-			}
-			else
-				i++;
-		}
-	}
-	printf("\n");
-	return (0);
+        if (ac == 2)
+        {
+                num = atoi(av[1]);
+                if (num == 1)
+                {
+                        printf("1\n");
+                        return (0);
+                }
+                while (num > 1)
+                {
+                        if (num % i == 0)
+                        {
+                                printf("%d", i);
+                                num /= i;
+                                if (num > 1)
+                                        printf("*");
+                        }
+                        else
+                                i++;
+                }
+        }
+        printf("\n");
+        return (0);
 }
