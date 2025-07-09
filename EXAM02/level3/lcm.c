@@ -21,5 +21,6 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 	{
 		if (candidate % a == 0 && candidate % b == 0)
 			return (candidate);
+		candidate++;
 	}
 }
