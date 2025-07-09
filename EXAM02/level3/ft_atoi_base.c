@@ -12,19 +12,17 @@
 
 int	ft_atoi_base(const char *str, int str_base)
 {
-	int	i;
-	int	sign;
-	int result;
+	int	i = 0;
+	int	sum = 0;
+	int	sign = 1;
 	int	val;
 
-	i = 0;
-	sign = 1;
-	result = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
 	while (str[i])
@@ -35,25 +33,10 @@ int	ft_atoi_base(const char *str, int str_base)
 			val = str[i] - 'a' + 10;
 		else if (str[i] >= 'A' && str[i] <= 'F')
 			val = str[i] - 'A' + 10;
-		else 
-			break;
-		if (val >= str_base)
-			break;
-		result = result * str_base + val;
+		else
+			break ;
+		sum = sum * str_base + val;
 		i++;
 	}
-	return (result * sign);
-}
-
-#include <stdio.h>
-
-int	ft_atoi_base(const char *str, int str_base);
-
-int main(void)
-{
-	printf("%d\n", ft_atoi_base("1a", 16));     // 26
-	printf("%d\n", ft_atoi_base("101", 2));      // 5
-	printf("%d\n", ft_atoi_base(" -7F", 16));    // -127
-	printf("%d\n", ft_atoi_base("  77", 8));     // 63
-	printf("%d\n", ft_atoi_base(" 42", 10));     // 42
+	return (sign * sum);
 }
