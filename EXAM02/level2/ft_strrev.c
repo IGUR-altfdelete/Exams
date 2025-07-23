@@ -18,7 +18,6 @@ char	*ft_strrev(char *str)
 	
 	i = 0;
 	while (str[i])
-	{
 		i++;
 	j = i - 1;
 	i = 0;
