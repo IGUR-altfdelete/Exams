@@ -45,7 +45,11 @@ char	*ft_itoa(int nbr)
 		num = -num;
 	}
 	if (num == 0)
+	{
 		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
 	while (num > 0)
 	{
 		str[--len] = (num % 10) + '0';
