@@ -22,7 +22,7 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (src[len])
 		len++;
-	tmp = malloc(sizeof(char) * len + 1);
+	tmp = malloc(sizeof(char) * (len + 1));
 	if (!tmp)
 		return (NULL);
 	while (src[i])
