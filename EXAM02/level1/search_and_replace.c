@@ -17,7 +17,7 @@ int	main(int ac, char *av[])
 	int	i;
 
 	i = 0;
-	if (ac == 4)
+	if (ac == 4 && av[2][1] == 0 && av[3][1] == 0)
 	{
 		while (av[1][i])
 		{
