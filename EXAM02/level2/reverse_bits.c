@@ -12,7 +12,7 @@
 
 unsigned char	reverse_bits(unsigned char octet)
 {
-	unsigned char	res;
+	unsigned char	res = 0;
 	int				i;
 
 	i = 8;
